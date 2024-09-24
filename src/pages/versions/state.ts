@@ -1,17 +1,8 @@
 import { Modal } from 'antd';
 import { TablePaginationConfig } from 'antd/lib/table';
-import { observable, runInAction } from 'mobx';
 import request from '@/services/request';
 
-const initState = {
-  loading: false,
-  packages: observable.array<Package>(),
-  versions: observable.array<Version>(),
-  unused: observable.array<Package>(),
-  selected: observable.array<number>(),
-};
-
-type State = typeof initState & { app?: App; pagination: TablePaginationConfig };
+type State = { app?: App; pagination: TablePaginationConfig };
 
 const state = observable.object<State>({
   ...initState,
