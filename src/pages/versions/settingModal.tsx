@@ -27,7 +27,7 @@ const SettingModal = (app: App) => {
           checkedChildren='启用'
           unCheckedChildren='暂停'
           checked={app?.status !== 'paused'}
-          onChange={(checked) => (app?.status = checked ? 'normal' : 'paused')}
+          onChange={(checked) => (app.status = checked ? 'normal' : 'paused')}
         />
       </Form.Item>
       <Form.Item label='忽略编译时间戳（高级版以上可启用）' name='ignoreBuildTime'>
@@ -39,7 +39,7 @@ const SettingModal = (app: App) => {
           checkedChildren='启用'
           unCheckedChildren='不启用'
           checked={app?.ignoreBuildTime === 'enabled'}
-          onChange={(checked) => (app?.ignoreBuildTime = checked ? 'enabled' : 'disabled')}
+          onChange={(checked) => (app.ignoreBuildTime = checked ? 'enabled' : 'disabled')}
         />
       </Form.Item>
       <Form.Item label='删除应用'>
